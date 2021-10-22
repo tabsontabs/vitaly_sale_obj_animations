@@ -7,10 +7,10 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import * as THREE  from "three";
 
-export default function Proxy({ ...props }) {
+export default function Oldroxy({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/proxy.glb')
-  useFrame(() => (group.current.rotation.y = group.current.rotation.z += 0.009)) 
+  useFrame(() => (group.current.rotation.x = group.current.rotation.y += 0.009)) 
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
