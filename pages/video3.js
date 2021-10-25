@@ -5,6 +5,7 @@ import { OrbitControls, Html } from '@react-three/drei';
 import Glitch from '../components/Glitch'
 import Fuse from '../components/Fuse'
 import Vaurus from '../components/Vaurus'
+import Matrix from '../components/Matrix'
 
 
 export default function VideoTwo() {
@@ -32,8 +33,9 @@ export default function VideoTwo() {
             <spotLight position={[10, 15, 10]} angle={0.3}/>
             <Suspense fallback={<Html><div> </div></Html>}>
               <Fuse />
-              <Glitch />
+              {/* <Glitch /> */}
               <Vaurus />
+              <Matrix />
             </Suspense>
         </Canvas>
         
