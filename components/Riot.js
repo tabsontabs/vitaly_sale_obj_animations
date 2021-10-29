@@ -14,7 +14,7 @@ export default function Riot({ ...props }) {
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
-    opacity: 0.1,
+    opacity: 0.25,
     wireframe: true,
     roughness: 0
   })

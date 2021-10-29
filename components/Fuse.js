@@ -10,16 +10,16 @@ import * as THREE  from "three";
 export default function Fuse({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/fuse.glb')
-  useFrame(() => (group.current.rotation.x = group.current.rotation.y += 0.004)) 
+  useFrame(() => (group.current.rotation.x = group.current.rotation.z += 0.004)) 
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
-    opacity: 0.1,
+    opacity: 0.25,
     wireframe: true,
     roughness: 0
   })
   return (
-    <group ref={group} {...props} dispose={null} position={[2, -1, 0]}>
+    <group ref={group} {...props} dispose={null} position={[0, 0, 0]}>
       <mesh scale={0.02, 0.02, 0.02} geometry={nodes.object_1.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
       <mesh scale={0.02, 0.02, 0.02} geometry={nodes.object_2.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
       <mesh scale={0.02, 0.02, 0.02} geometry={nodes.object_3.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />

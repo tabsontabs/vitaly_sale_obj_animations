@@ -14,12 +14,12 @@ export default function Frenzy(props) {
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
-    opacity: 0.1,
+    opacity: 0.25,
     wireframe: true,
     roughness: 0
   })
   return (
-    <group ref={group} {...props} dispose={null} position={[2, 0, 0]}>
+    <group ref={group} {...props} dispose={null} position={[0, 0, 0]}>
       <mesh scale={0.04, 0.04, 0.04} geometry={nodes.object_1.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
       <mesh scale={0.04, 0.04, 0.04} geometry={nodes.object_2.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
       <mesh scale={0.04, 0.04, 0.04} geometry={nodes.object_3.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />

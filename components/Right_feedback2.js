@@ -14,26 +14,26 @@ export default function Feedback({ ...props }) {
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
-    opacity: 0.1,
+    opacity: 0.25,
     wireframe: true,
     roughness: 0
   })
   return (
-    <group ref={group} {...props} dispose={null} position={[-2, 2, 0]}>
+    <group ref={group} {...props} dispose={null} position={[2, -1.5, 0]}>
       <mesh
-        scale={0.025, 0.025, 0.025}
+        scale={0.04, 0.04, 0.04}
         geometry={nodes.object_1001.geometry}
         material={material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
-        scale={0.025, 0.025, 0.025}
+        scale={0.04, 0.04, 0.04}
         geometry={nodes.object_2001.geometry}
         material={material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
-        scale={0.025, 0.025, 0.025}
+        scale={0.04, 0.04, 0.04}
         geometry={nodes.object_3001.geometry}
         material={material}
         rotation={[Math.PI / 2, 0, 0]}

@@ -10,7 +10,7 @@ import * as THREE  from "three";
 export default function Vaurus({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/vaurus.glb')
-  useFrame(() => (group.current.rotation.x = group.current.rotation.y += 0.009)) 
+  useFrame(() => (group.current.rotation.y = group.current.rotation.z += 0.009)) 
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
@@ -19,9 +19,9 @@ export default function Vaurus({ ...props }) {
     roughness: 0
   })
   return (
-    <group ref={group} {...props} dispose={null} position={[1, 2, 0]}>
-      <mesh scale={0.03, 0.03, 0.03} geometry={nodes.object_1.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
-      <mesh scale={0.03, 0.03, 0.03} geometry={nodes.object_2.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
+    <group ref={group} {...props} dispose={null} position={[1, 1.5, 0]}>
+      <mesh scale={0.035, 0.035, 0.035} geometry={nodes.object_1.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh scale={0.035, 0.035, 0.035} geometry={nodes.object_2.geometry} material={material} rotation={[Math.PI / 2, 0, 0]} />
     </group>
   )
 }

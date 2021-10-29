@@ -11,7 +11,7 @@ import * as THREE  from "three";
 export default function Matrix({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/matrix.glb')
-  useFrame(() => (group.current.rotation.x = group.current.rotation.y += 0.006)) 
+  useFrame(() => (group.current.rotation.y = group.current.rotation.z += 0.006)) 
   const material = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
@@ -22,15 +22,15 @@ export default function Matrix({ ...props }) {
   const lenseMaterial = new THREE.MeshStandardMaterial({
     color: 0x545454,
     transparent: true,
-    opacity: 0.1,
+    opacity: 0.4,
     roughness: 0
   })
   return (
     <group ref={group} {...props} dispose={null} position={[-2, 0, 0]}>
       <group rotation={[Math.PI / 2, 0, 0]}>
-        <mesh scale={0.02, 0.02, 0.02} geometry={nodes['matrix(2)_1'].geometry} material={material} />
-        <mesh scale={0.02, 0.02, 0.02} geometry={nodes['matrix(2)_2'].geometry} material={material} />
-        <mesh scale={0.02, 0.02, 0.02} geometry={nodes['matrix(2)_3'].geometry} material={lenseMaterial} />
+        <mesh scale={0.0175, 0.0175, 0.0175} geometry={nodes['matrix(2)_1'].geometry} material={material} />
+        <mesh scale={0.0175, 0.0175, 0.0175} geometry={nodes['matrix(2)_2'].geometry} material={material} />
+        <mesh scale={0.0175, 0.0175, 0.0175} geometry={nodes['matrix(2)_3'].geometry} material={lenseMaterial} />
       </group>
     </group>
   )
